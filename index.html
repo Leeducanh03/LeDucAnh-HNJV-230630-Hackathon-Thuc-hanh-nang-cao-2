@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="wrapper-student">
+                <h1 style="text-align: center;">Thông tin học viên</h1>
+                <!-- Thông tin họ và tên -->
+                <div class="form-group">
+                    <label for="name">Họ và tên</label>
+                    <input type="text" value="" id="name" placeholder="Nhập họ và tên" required>
+                </div>
+                <!-- Thông tin email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" value="" id="email" placeholder="Nhập email" required>
+                </div>
+                <!-- Thông tin số điện thoại -->
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="text" value="" id="phone" placeholder="Nhập số điện thoại" required>
+                </div>
+                <!-- Thông tin quê quán -->
+                <div class="form-group">
+                    <label for="address">Quê quán</label>
+                    <input type="text" value="" id="address" placeholder="Nhập quê quán" required>
+                </div>
+
+                <!-- Phần radio -->
+                <div class="form-group-radio">
+                    <label for="">Giới tính</label>
+
+                    <div class="content-radio">
+                        <div class="item">
+                            <input id="gender1" class="sex_choose" type="radio" value="Nam" name="" checked>
+                            <label for="nam">Nam</label>
+                        </div>
+                        <div class="item">
+                            <input id="gender2" class="sex_choose" type="radio" value="Nữ" name="" selected>
+                            <label for="nu">Nữ</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phần submit button -->
+                <div class="button">
+                    <button type="submit" onclick="addStudent()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Hiển thị danh sách học viên -->
+    <div class="table_list">
+        <div class="header">
+            <h1 class="list_header" style="text-align: center;">Danh sách học viên</h1>
+            <div class="search_and_sort">
+                <div class="search">
+                    <label for="">Tìm kiếm học viên :</label>
+                    <input type="text" value="" id="search" required>
+                    <button type="button" onclick="search" class="btn btn-primary btn_search">Search</button>
+                </div>
+                <!-- <div class="sort">
+                    <button class="btn btn-danger sort_name">Sort name En</button>
+                    <button class="btn btn-danger sort_name_vn">Sort name tiếng việt</button>
+                </div> -->
+            </div>
+        </div>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Act</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Duc Anh</td>
+                    <td>leeducanh03@gmail.com</td>
+                    <td>0877.115.109</td>
+                    <td>Hà Nội</td>
+                    <td>Nam</td>
+                    <td><button>Edit</button></td>
+                    <td><button>Delete</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <div id="question" style="display: none;">
+        <input type="text" id="editName" placeholder="edit Name">
+        <input type="text" id="editEmail" placeholder="edit Email">
+        <input type="text" id="editPhone" placeholder="edit Phone">
+        <input type="text" id="editAddress" placeholder="edit Address">
+        <input type="text" id="editgender" placeholder="edit gender">
+        <button onclick="onUpdate()" type="button">Update</button>
+        <button onclick="onCancel()" type="button">Cancel</button>
+    </div>
+
+
+
+    <script src="./main.js"></script>
+    <!-- <script src="./test.js"></script> -->
+</body>
+
+</html>
